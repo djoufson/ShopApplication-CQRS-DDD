@@ -16,6 +16,11 @@ public class ProductId : ValueObject
         return new ProductId(Guid.NewGuid());
     }
 
+    public static ProductId CreateUnique(Guid id)
+    {
+        return new ProductId(id);
+    }
+
     public override IEnumerable<object> GetEqualityComparer()
     {
         yield return Value;

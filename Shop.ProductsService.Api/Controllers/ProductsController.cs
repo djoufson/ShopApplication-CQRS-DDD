@@ -1,7 +1,11 @@
-﻿namespace Shop.ProductsService.Api.Controllers;
+﻿using Microsoft.AspNetCore.Authorization;
+using Shop.ProductsService.Applicaiton.Products.Queries;
+
+namespace Shop.ProductsService.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Roles = "Admin")]
 public class ProductsController : ControllerBase
 {
     private readonly ISender _sender;
@@ -17,6 +21,24 @@ public class ProductsController : ControllerBase
     public async Task<IActionResult> AddProduct(AddProductRequestDto request)
     {
         var command = _mapper.Map<AddProductCommand>(request);
+        var response = await _sender.Send(command);
+        var responseDto = _mapper.Map<ProductDto>(response);
+        return Ok(responseDto);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllProducts()
+    {
+        var command = new GetAllProductsQuery();
+        var response = await _sender.Send(command);
+        var responseDto = _mapper.Map<IEnumerable<ProductDto>>(response);
+        return Ok(responseDto);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetProductById(string id)
+    {
+        var command = new GetSingleProductQuery(id);
         var response = await _sender.Send(command);
         var responseDto = _mapper.Map<ProductDto>(response);
         return Ok(responseDto);

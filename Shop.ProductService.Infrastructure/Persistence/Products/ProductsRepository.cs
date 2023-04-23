@@ -1,6 +1,7 @@
 ﻿using Shop.ProductsService.Applicaiton.Persistence;
 using Shop.ProductsService.Domain.ProductAggregate;
 using Shop.ProductsService.Domain.ProductAggregate.ValueObjects;
+using System.Collections.Immutable;
 
 namespace Shop.ProductsService.Infrastructure.Persistence.Products;
 
@@ -30,6 +31,11 @@ public class ProductsRepository : IProductsRepository
     public Product? Get(ProductId id)
     {
         return _products.FirstOrDefault(p => p.Id == id);
+    }
+
+    public IReadOnlyList<Product> GetAll()
+    {
+        return _products.ToImmutableList();
     }
 
     public Product? Update(Product product)
