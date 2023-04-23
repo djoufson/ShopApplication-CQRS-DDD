@@ -1,4 +1,4 @@
-﻿using Shop.UserService.Application.Persistence.Base;
+﻿using Shop.Common.Application_Layer.Persistence.Base;
 using Shop.UserService.Domain.UserAggregate;
 using Shop.UserService.Domain.UserAggregate.ValueObjects;
 

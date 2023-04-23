@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Shop.Common.Application_Layer.Behaviors;
 using Shop.UserService.Application.Authentication.Commands.Login;
 using Shop.UserService.Application.Authentication.Commands.Register;
-using Shop.UserService.Application.Common.Behaviors;
 
 namespace Shop.UserService.Application;
 

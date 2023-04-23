@@ -1,6 +1,4 @@
-﻿using Shop.UserService.Domain.Common.Models.Base;
-
-namespace Shop.UserService.Domain.Common.Models;
+﻿namespace Shop.Common.Domain_Layer.Models.Base;
 
 public abstract class ValueObject : IValueObject, IEquatable<ValueObject>
 {

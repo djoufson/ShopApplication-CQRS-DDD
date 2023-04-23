@@ -1,6 +1,4 @@
-﻿using Shop.UserService.Domain.Common.Models;
-
-namespace Shop.UserService.Domain.UserAggregate.ValueObjects;
+﻿namespace Shop.UserService.Domain.UserAggregate.ValueObjects;
 
 public class UserId : ValueObject
 {

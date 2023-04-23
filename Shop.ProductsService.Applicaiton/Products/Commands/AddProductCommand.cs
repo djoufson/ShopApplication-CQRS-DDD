@@ -1,4 +1,7 @@
 ﻿namespace Shop.ProductsService.Applicaiton.Products.Commands;
 
 public record AddProductCommand(
-    ) : IRequest<AddProductCommandResponse>;
+    string ProductName,
+    string Description,
+    decimal Price,
+    int Quantity) : IRequest<AddProductCommandResponse>;

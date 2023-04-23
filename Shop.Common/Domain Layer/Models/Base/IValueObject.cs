@@ -1,4 +1,4 @@
-﻿namespace Shop.UserService.Domain.Common.Models.Base;
+﻿namespace Shop.Common.Domain_Layer.Models.Base;
 
 internal interface IValueObject
 {

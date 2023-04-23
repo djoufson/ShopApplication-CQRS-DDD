@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Shop.UserService.Application.Authentication.Commands.Register;
+using MediatR;
 
-namespace Shop.UserService.Application.Common.Behaviors;
+namespace Shop.Common.Application_Layer.Behaviors;
 
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
@@ -15,11 +15,11 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
-        if(_validator is null)
+        if (_validator is null)
             return await next();
 
         var validationResult = await _validator.ValidateAsync(request, cancellationToken);
-        
+
         if (validationResult.IsValid)
             return await next();
         else

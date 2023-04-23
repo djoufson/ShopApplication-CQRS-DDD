@@ -1,4 +1,6 @@
-﻿namespace Shop.UserService.Domain.UserAggregate.Entities;
+﻿using Shop.Common.Domain_Layer.Models.Base;
+
+namespace Shop.UserService.Domain.UserAggregate.Entities;
 
 public sealed class UserRole : Entity<UserRoleId>
 {

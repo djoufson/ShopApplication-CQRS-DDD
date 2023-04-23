@@ -1,4 +1,4 @@
-﻿namespace Shop.UserService.Domain.Common.Models;
+﻿namespace Shop.Common.Domain_Layer.Models.Base;
 
 public abstract class Entity<TId> : IEquatable<Entity<TId>>
     where TId : notnull
@@ -12,7 +12,7 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
 
     public override bool Equals(object? obj)
     {
-        if(obj is Entity<TId> entity)
+        if (obj is Entity<TId> entity)
             return Id.Equals(entity.Id);
         return false;
     }

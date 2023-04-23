@@ -1,4 +1,6 @@
-﻿namespace Shop.UserService.Domain.UserAggregate;
+﻿using Shop.Common.Domain_Layer.Models.Base;
+
+namespace Shop.UserService.Domain.UserAggregate;
 
 public sealed class User : AggregateRoot<UserId>
 {

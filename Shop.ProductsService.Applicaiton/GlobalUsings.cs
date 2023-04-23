@@ -1,2 +1,11 @@
-﻿global using MediatR;
+﻿global using AutoMapper;
+global using FluentValidation;
+global using MediatR;
+global using Microsoft.Extensions.DependencyInjection;
+global using Shop.Common.Application_Layer.Behaviors;
+global using Shop.Common.Application_Layer.Persistence.Base;
+global using Shop.ProductsService.Applicaiton.Persistence;
 global using Shop.ProductsService.Applicaiton.Products.Commands;
+global using Shop.ProductsService.Applicaiton.Products.Validators;
+global using Shop.ProductsService.Domain.ProductAggregate;
+global using Shop.ProductsService.Domain.ProductAggregate.ValueObjects;
