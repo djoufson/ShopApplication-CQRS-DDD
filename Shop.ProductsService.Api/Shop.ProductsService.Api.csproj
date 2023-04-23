@@ -12,9 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shop.Common\Shop.Common.csproj" />
-    <ProjectReference Include="..\Shop.UserService.Application\Shop.UserService.Application.csproj" />
-    <ProjectReference Include="..\Shop.UserService.Contracts\Shop.UserService.Contracts.csproj" />
-    <ProjectReference Include="..\Shop.UserService.Infrastructure\Shop.UserService.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shop.ProductsService.Applicaiton\Shop.ProductsService.Applicaiton.csproj" />
+    <ProjectReference Include="..\Shop.ProductsService.Contracts\Shop.ProductsService.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
