@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Shop.ProductsService.Applicaiton.Products.Queries;
-
-namespace Shop.ProductsService.Api.Controllers;
+﻿namespace Shop.ProductsService.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize(Roles = "Admin")]
+//[Authorize(Roles = "Admin")]
 public class ProductsController : ControllerBase
 {
     private readonly ISender _sender;

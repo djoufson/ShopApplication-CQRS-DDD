@@ -1,6 +1,4 @@
-﻿using Shop.ProductsService.Domain.ProductAggregate;
-
-namespace Shop.ProductsService.Api.Profiles;
+﻿namespace Shop.ProductsService.Api.Profiles;
 
 public class ProductProfile : Profile
 {
