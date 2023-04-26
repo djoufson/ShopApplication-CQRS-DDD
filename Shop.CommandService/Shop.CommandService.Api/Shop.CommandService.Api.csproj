@@ -11,11 +11,9 @@
   </ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="Profiles\" />
-  </ItemGroup>
-	
-  <ItemGroup>
+    <ProjectReference Include="..\Shop.CommandService.Application\Shop.CommandService.Application.csproj" />
     <ProjectReference Include="..\Shop.CommandService.Contracts\Shop.CommandService.Contracts.csproj" />
+    <ProjectReference Include="..\Shop.CommandService.Infrastructure\Shop.CommandService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

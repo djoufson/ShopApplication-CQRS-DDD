@@ -1,4 +1,4 @@
-﻿namespace Shop.UserService.Application.Common.Interfaces;
+﻿namespace Shop.Common.Application_Layer.Services;
 
 public interface IDateTimeProvider
 {

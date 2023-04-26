@@ -5,12 +5,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Handlers\" />
-    <Folder Include="Validators\" />
+	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.13" />
+	<PackageReference Include="FluentValidation" Version="11.5.2" />
+	<PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shop.Common\Shop.Common.csproj" />
+    <ProjectReference Include="..\Shop.CommandService.Domain\Shop.CommandService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

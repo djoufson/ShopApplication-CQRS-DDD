@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Shop.CommandService.Application\Shop.CommandService.Application.csproj" />
+  </ItemGroup>
+
 </Project>
