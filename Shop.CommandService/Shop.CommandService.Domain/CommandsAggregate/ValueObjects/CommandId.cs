@@ -12,6 +12,7 @@ public class CommandId : ValueObject
     }
 
     public static CommandId CreateUnique() => new (Guid.NewGuid());
+    public static CommandId CreateUnique(string id) => new(Guid.Parse(id));
     public override IEnumerable<object> GetEqualityComparer()
     {
         yield return Value;

@@ -4,4 +4,5 @@ public record CreateCommandResponse(
     string Id,
     string ProductId,
     int Quantity,
-    int Status);
+    int Status,
+    DateTime OrderedAt);

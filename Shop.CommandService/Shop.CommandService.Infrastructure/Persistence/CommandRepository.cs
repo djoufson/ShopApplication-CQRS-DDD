@@ -48,6 +48,20 @@ public class CommandRepository : ICommandRepository
         return _commands.FirstOrDefault(c => c.Id == id);
     }
 
+    public IReadOnlyList<Command> GetAll()
+    {
+        return _commands.AsReadOnly();
+    }
+
+    public Command? RevokeCommand(CommandId id)
+    {
+        var command = Get(id);
+        if(command is not null)
+            command.Status = CommandStatus.Rejected;
+
+        return command;
+    }
+
     public Command? Update(Command entity)
     {
         throw new NotImplementedException();

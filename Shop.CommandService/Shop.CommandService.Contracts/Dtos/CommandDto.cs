@@ -4,4 +4,5 @@ public record CommandDto(
     string Id,
     string ProductId,
     int Quantity,
-    int Status);
+    int Status,
+    DateTime OrderedAt);

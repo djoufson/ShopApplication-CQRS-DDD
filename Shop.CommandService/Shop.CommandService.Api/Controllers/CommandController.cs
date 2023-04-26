@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Shop.CommandService.Application.Commands;
+using Shop.CommandService.Application.Queries;
 
 namespace Shop.CommandService.Api.Controllers;
 
@@ -9,7 +10,7 @@ namespace Shop.CommandService.Api.Controllers;
 public class CommandController : ControllerBase
 {
     private readonly ISender _sender;
-    private IMapper _mapper;
+    private readonly IMapper _mapper;
 
     public CommandController(ISender sender, IMapper mapper)
     {
@@ -18,9 +19,12 @@ public class CommandController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<CommandDto>> GetAllCommands()
+    public async Task<ActionResult<IEnumerable<CommandDto>>> GetAllCommands()
     {
-        return Ok();
+        var query = new GetAllCommandsQuery();
+        var response = await _sender.Send(query);
+        var responseDto = _mapper.Map<IEnumerable<CommandDto>>(response);
+        return Ok(responseDto);
     }
 
     [HttpPost]
@@ -32,9 +36,12 @@ public class CommandController : ControllerBase
         return Ok(responseDto);
     }
 
-    [HttpPut("{id}")]
-    public ActionResult<CommandDto> RevokeCommand(string id)
+    [HttpPut("revoke/{id}")]
+    public async Task<ActionResult<CommandDto>> RevokeCommand(string id)
     {
-        return Ok();
+        var command = new RevokeCommandCommand(id);
+        var response = await _sender.Send(command);
+        var responseDto = _mapper.Map<CommandDto>(response);
+        return Ok(responseDto);
     }
 }
